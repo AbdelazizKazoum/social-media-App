@@ -1,4 +1,4 @@
-# SocialEcho
+# Social Media App
 
 A social networking platform with automated content moderation and context-based authentication system.
 
@@ -8,13 +8,25 @@ A social networking platform with automated content moderation and context-based
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Schema Diagram](#schema-diagram)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [License](#license)
+- [Social Media App](#social-media-app)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+    - [Automated Content Moderation](#automated-content-moderation)
+    - [Context-Based Authentication](#context-based-authentication)
+    - [User Roles](#user-roles)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [Schema Diagram](#schema-diagram)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+      - [`.env` Variables](#env-variables)
+  - [Usage](#usage)
+    - [Admin](#admin)
+    - [Moderator](#moderator)
+      - [Demo](#demo)
+  - [License](#license)
 
 ## Project Overview
 
@@ -48,8 +60,6 @@ There are three distinct user roles within the system:
 2. Moderators: Moderators manage communities, manually review reported posts, and perform other moderation-related tasks.
 3. General Users: General users have the ability to make posts, like comments, and perform other actions within the platform.
 
-
-
 ## Features
 
 - [x] User authentication and authorization (JWT)
@@ -65,7 +75,6 @@ There are three distinct user roles within the system:
 - [x] Admin dashboard
 - [x] Moderator dashboard
 - [x] Email notifications
-
 
 ## Technologies
 
@@ -83,12 +92,9 @@ There are three distinct user roles within the system:
 - Flask
 - Hugging Face Transformers
 
-
 ## Schema Diagram
 
 ![Schema Diagram](https://raw.githubusercontent.com/nz-m/SocialEcho/main/resources/Schema-Diagram.png)
-
-
 
 ## Getting Started
 
@@ -106,6 +112,7 @@ Before running the application, make sure you have the following installed:
 ```bash
 git clone https://github.com/nz-m/SocialEcho.git
 ```
+
 2. Go to the project directory and install dependencies for both the client and server
 
 ```bash
@@ -133,13 +140,13 @@ cd client
 npm start
 ```
 
-
 ### Configuration
 
 Run the `admin_tool.sh` script from the server directory with permissions for executing the script. This script is used for configuring the admin account, creating the initial communities, and other settings.
+
 ```bash
 ./admin_tool.sh
-``` 
+```
 
 #### `.env` Variables
 
@@ -159,9 +166,7 @@ For content moderation, you need the `PERSPECTIVE_API_KEY` and either the `INTER
 
 If you prefer, the Flask server can be run locally as an alternative to using the Hugging Face Interface API or TextRazor API. Refer to the `classifier_server` directory for more information.
 
-
->**Note:** Configuration for context-based authentication and content moderation features are **_not mandatory_** to run the application. However, these features will not be available if the configuration is not provided.
-
+> **Note:** Configuration for context-based authentication and content moderation features are **_not mandatory_** to run the application. However, these features will not be available if the configuration is not provided.
 
 ## Usage
 
@@ -174,9 +179,9 @@ The admin dashboard can be accessed at the `/admin` route. Use the `admin_tool.s
 Moderators have specific email domain (`@mod.socialecho.com`). When registering with an email from this domain, the user is automatically assigned the moderator role. Moderators can be assigned to different communities from the admin dashboard.
 
 #### Demo
+
 https://youtu.be/Tmncayg7FeU
 
 ## License
 
 This project is licensed under the [MIT License](https://github.com/nz-m/SocialEcho/blob/main/LICENSE).
-
